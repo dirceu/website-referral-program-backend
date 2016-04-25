@@ -3,7 +3,7 @@
  *  Router: loads all api routes
  */
 import express        from 'express';
-import todosInstaller from './todosInstaller'
+import referralInstaller from './referralInstaller'
 /*
   TODO: Import all your route installers here
   ```
@@ -14,7 +14,7 @@ import todosInstaller from './todosInstaller'
 export default () => {
   let routes = express.Router();
 
-  routes.use('/todos', todosInstaller());
+  routes.use('/referral', referralInstaller());
   /*
     TODO: Mount all your rote installers here
     ```

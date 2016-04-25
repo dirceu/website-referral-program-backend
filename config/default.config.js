@@ -5,14 +5,13 @@
  *  All secrets should go under the `secret` section, the rest of configuration params should go under `params`
  *
  */
-export default () => {
-  return {
-    baseUri: '/api',
-    // Secrets
-    secret: {
-    },
-    // Configuration parameters
-    param:  {
-    }
-  };
-}
+
+const config = {
+  baseUri: '/api',
+  // Secrets
+  secret: {},
+  // Configuration parameters
+  param: {}
+};
+
+module.exports = () => config;

@@ -9,8 +9,8 @@ import express     from 'express';
 import routes      from './routes';
 import middlewares from './middlewares';
 
-export default (config) => {
-  let api = express.Router();
+export default config => {
+  const api = express.Router();
 
   // Middlewares
   api.use(config.baseUri || '/', middlewares());

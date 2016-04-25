@@ -6,7 +6,7 @@ import express    from 'express';
 import bodyParser from 'body-parser';
 
 export default () => {
-  let middlewares = express.Router();
+  const middlewares = express.Router();
 
   /*
    TODO: Add your middlewares here
@@ -16,6 +16,14 @@ export default () => {
   */
   middlewares.use(bodyParser.json());                       // for parsing application/json
   middlewares.use(bodyParser.urlencoded({extended: true})); // for parsing application/x-www-form-urlencoded
+
+  middlewares.use((req, res, next) => {
+    req.user = {
+      id: 'auth0|ramasilveyra1@gmail.com'
+    };
+
+    return next();
+  });
 
   return middlewares;
 };
